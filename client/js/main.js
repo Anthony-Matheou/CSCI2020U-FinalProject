@@ -7,36 +7,36 @@ document.head.appendChild(style);
 const piecePositions = {
 white: {
     king: '0px 0px',
-    queen: '200px 0px',
-    rook: '80px 0px',
-    bishop: '160px 0px',
-    knight: '120px 0px',
-    pawn: '40px 0px'
+    queen: '300px 0px',
+    rook: '120px 0px',
+    bishop: '240px 0px',
+    knight: '180px 0px',
+    pawn: '60px 0px'
 },
 black: {
-    king: '0px 40px',
-    queen: '200px 40px',
-    rook: '80px 40px',
-    bishop: '160px 40px',
-    knight: '120px 40px',
-    pawn: '40px 40px'
+    king: '0px 60px',
+    queen: '300px 60px',
+    rook: '120px 60px',
+    bishop: '240px 60px',
+    knight: '180px 60px',
+    pawn: '60px 60px'
 }
 };
 
 // generate classes for each piece
 for (const color in piecePositions) {
-for (const piece in piecePositions[color]) {
-    const className = `.${color}.${piece}`;
-    const position = piecePositions[color][piece];
-    style.innerHTML += `${className} {
-    background-image: url('images/chess.png');
-    background-size: 240px 80px;
-    background-position: ${position};
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    }\n`;
-}
+    for (const piece in piecePositions[color]) {
+        const className = `.${color}.${piece}`;
+        const position = piecePositions[color][piece];
+        style.innerHTML += `${className} {
+        background-image: url('images/chess.png');
+        background-size: 360px 120px;
+        background-position: ${position};
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        }\n`;
+    }
 }
 
 // create the chessboard

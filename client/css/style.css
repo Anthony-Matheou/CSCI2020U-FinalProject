@@ -1,14 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 #board {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 320px;
-  height: 320px;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  height: 480px;
 }
 
 .square {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .white {
