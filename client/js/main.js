@@ -1,5 +1,6 @@
 // create a new style element to hold our piece classes
 const style = document.createElement('style');
+var selectedPiece = null;
 document.head.appendChild(style);
 
 // define the positions of the pieces in the image
@@ -62,6 +63,22 @@ for (let row = 0; row < 8; row++) {
             piece = 'king';
         }
         const pieceDiv = document.createElement('div');
+        pieceDiv.addEventListener('click', function() {
+            if(pieceDiv.style.backgroundColor == 'yellow') {
+                pieceDiv.style.backgroundColor = 'transparent';
+                selectedPiece = null;
+            }
+            else if(selectedPiece != null) {
+                selectedPiece.style.backgroundColor = "transparent";
+                pieceDiv.style.backgroundColor = 'yellow';
+                selectedPiece = this;
+                
+            }
+            else {
+                pieceDiv.style.backgroundColor = 'yellow';
+                selectedPiece = this;
+            }
+        });
         pieceDiv.className = `${color} ${piece} piece`;
         square.appendChild(pieceDiv);
         }
